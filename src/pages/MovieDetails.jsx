@@ -38,7 +38,7 @@ const MovieDetails = () => {
 
 	return (
 		<div className='min-h-screen bg-black text-white'>
-			{/* Backdrop */}
+		
 			{movie.backdrop_path && (
 				<div className='relative h-[60vh] overflow-hidden'>
 					<img 
@@ -50,10 +50,10 @@ const MovieDetails = () => {
 				</div>
 			)}
 
-			{/* Content */}
+		
 			<div className='max-w-7xl mx-auto px-4 -mt-40 relative z-10'>
 				<div className='flex flex-col md:flex-row gap-8'>
-					{/* Poster */}
+					
 					<div className='flex-shrink-0'>
 						<img 
 							src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
@@ -62,13 +62,13 @@ const MovieDetails = () => {
 						/>
 					</div>
 
-					{/* Details */}
+					
 					<div className='flex-1'>
 						<h1 className='text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent'>
 							{movie.title}
 						</h1>
 
-						{/* Meta Info */}
+						
 						<div className='flex flex-wrap items-center gap-4 mb-6 text-gray-300'>
 							<div className='flex items-center gap-2'>
 								<span className='text-yellow-400 text-xl'>★</span>
@@ -87,7 +87,7 @@ const MovieDetails = () => {
 							</span>
 						</div>
 
-						{/* Genres */}
+					
 						<div className='flex flex-wrap gap-2 mb-6'>
 							{movie.genres?.map((genre) => (
 								<span 
@@ -99,13 +99,13 @@ const MovieDetails = () => {
 							))}
 						</div>
 
-						{/* Overview */}
+					
 						<div className='mb-6'>
 							<h2 className='text-2xl font-semibold mb-3 text-purple-400'>Overview</h2>
 							<p className='text-gray-300 text-lg leading-relaxed'>{movie.overview}</p>
 						</div>
 
-						{/* Additional Info */}
+						
 						{movie.runtime && (
 							<div className='text-gray-400'>
 								<span className='font-semibold text-white'>Runtime:</span> {movie.runtime} minutes
@@ -115,7 +115,7 @@ const MovieDetails = () => {
 				</div>
 			</div>
 
-			{/* Bottom Padding */}
+			
 			<div className='h-20'></div>
 		</div>
 	);

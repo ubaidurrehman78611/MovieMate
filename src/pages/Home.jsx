@@ -52,10 +52,10 @@ const Home = () => {
 	}
 	return (
 		<div className='min-h-screen bg-black text-white'>
-			{/* Header Section */}
+			
 			<div className=''>
 				<div className='max-w-7xl mx-auto px-4'>
-					{/* Search Bar */}
+					
 					<form onSubmit={handleSubmit} className='flex gap-3 max-w-2xl'>
 						<Input
 							type='text'
@@ -72,7 +72,7 @@ const Home = () => {
 				</div>
 			</div>
 
-			{/* Movies Grid */}
+			
 			<div className='max-w-7xl mx-auto px-4 py-8'>
 				<MovieList
 					key={movieList.id}
