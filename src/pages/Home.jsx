@@ -56,12 +56,12 @@ const Home = () => {
 			<div className=''>
 				<div className='max-w-7xl mx-auto px-4'>
 					
-					<form onSubmit={handleSubmit} className='flex gap-3 max-w-2xl'>
+					<form onSubmit={handleSubmit} className='flex items-center justify-center   gap-3 '>
 						<Input
 							type='text'
 							placeholder='Search for movies...'
 							ref={searchMovie}
-							className='bg-gray-900/50 border-gray-800 text-white placeholder:text-gray-500 focus:border-purple-500 focus:ring-purple-500 h-12 text-lg'
+							className='bg-gray-900/50 max-w-xl border-gray-800 text-white placeholder:text-gray-500 focus:border-purple-500 focus:ring-purple-500 h-12 text-lg'
 						/>
 						<Button
 							type='submit'

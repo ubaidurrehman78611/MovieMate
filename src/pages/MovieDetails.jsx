@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useState , useEffect } from 'react';
+import Recommendation from './Recommendation';
 const MovieDetails = () => {
 	const [movie, setMovie] = useState(null);
 	const { id } = useParams();
@@ -116,7 +117,10 @@ const MovieDetails = () => {
 			</div>
 
 			
-			<div className='h-20'></div>
+			<div className='h-20'>	
+			</div>
+			<div><Recommendation movieId={movie.id}></Recommendation></div>
+
 		</div>
 	);
 };
