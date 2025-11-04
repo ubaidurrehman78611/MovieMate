@@ -9,7 +9,7 @@ const Home = () => {
 	const [loading, setLoading] = useState(false);
 	const fetchMovies = async (query) => {
 		setLoading(true);
-		const url = `https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=1`;
+		const url = `https://api.themoviedb.org/3/search/movie?query=${query}`;
 		const options = {
 			method: 'GET',
 			headers: {
@@ -43,31 +43,41 @@ const Home = () => {
 	};
 	if (loading) {
 		return (
-			<div>
-				<h1>Loading...</h1>
+			<div className='min-h-screen bg-black flex items-center justify-center'>
+				<div className='text-center'>
+					<div className='animate-pulse text-purple-500 text-2xl font-bold'>Loading...</div>
+				</div>
 			</div>
 		);
 	}
 	return (
-		<div>
-			<div className='flex w-full max-w-sm items-center gap-2'>
-				<form onSubmit={handleSubmit}>
-					<Input
-						type='text'
-						placeholder='Search Movie'
-						ref={searchMovie}
-					/>
-					<Button
-						type='submit'
-						variant='outline'>
-						Search
-					</Button>
-				</form>
+		<div className='min-h-screen bg-black text-white'>
+			{/* Header Section */}
+			<div className=''>
+				<div className='max-w-7xl mx-auto px-4'>
+					{/* Search Bar */}
+					<form onSubmit={handleSubmit} className='flex gap-3 max-w-2xl'>
+						<Input
+							type='text'
+							placeholder='Search for movies...'
+							ref={searchMovie}
+							className='bg-gray-900/50 border-gray-800 text-white placeholder:text-gray-500 focus:border-purple-500 focus:ring-purple-500 h-12 text-lg'
+						/>
+						<Button
+							type='submit'
+							className='bg-purple-600 hover:bg-purple-700 text-white px-8 h-12 font-semibold'>
+							Search
+						</Button>
+					</form>
+				</div>
 			</div>
-			<div>
+
+			{/* Movies Grid */}
+			<div className='max-w-7xl mx-auto px-4 py-8'>
 				<MovieList
 					key={movieList.id}
-					movieList={movieList}></MovieList>
+					movieList={movieList}
+				/>
 			</div>
 		</div>
 	);
