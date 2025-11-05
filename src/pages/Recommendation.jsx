@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import MovieCard from './MovieCard';
-const Recommendation = ({movieId}) => {
+const Recommendation = ({movieId, limit = 5}) => {
     const [recommendations, setRecommendations] = useState([]);
     const [loading, setLoading] = useState(true);
     
@@ -18,8 +18,9 @@ const Recommendation = ({movieId}) => {
         try {
             const res = await fetch(url, options);
             const data = await res.json();
-            setRecommendations(data.results || []);
-            console.log("RECOMMENDATIONS", data.results);
+            const limitedResults = (data.results || []).slice(0, limit);
+            setRecommendations(limitedResults);
+            console.log("RECOMMENDATIONS", limitedResults);
         } catch (error) {
             console.error('Error fetching recommendations:', error);
         }
